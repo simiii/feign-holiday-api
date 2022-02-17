@@ -1,2 +1,2 @@
-# feign-holiday-api
-A feign client for holidayapi.com
+# spring-feign-holiday-api
+A spring feign client for holidayapi.com
