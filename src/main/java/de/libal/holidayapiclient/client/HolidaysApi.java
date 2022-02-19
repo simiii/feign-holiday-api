@@ -1,6 +1,6 @@
 package de.libal.holidayapiclient.client;
 
-import de.libal.holidayapiclient.domain.ResponseWrapper;
+import de.libal.holidayapiclient.domain.ResponseWrapperHoliday;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +21,6 @@ public interface HolidaysApi {
      * @param country                                for countries, ISO 3166-1 alpha-2 or ISO 3166-1 alpha-3 format. For states / provinces (with our States & Provinces plan), ISO 3166-2 format. Accepts up to 10 comma separated values
      * @param optionalLanguage                       ISO 639-1 format (with exceptions)
      * @param optionalSearch                         search holidays by name - Minimum 5 characters
-     * @param optionalState                          optional state available on states & provinces plan
      * @param optionalMonth                          1 or 2 digit month (1-12).
      * @param optionalDay                            1 or 2 digit day (1-31 depending on the month) - must be used with month.
      * @param optionalIsPublic                       return only public holidays
@@ -32,17 +31,16 @@ public interface HolidaysApi {
      * @return retrieves a list public holidays and observances for countries, states and provinces
      */
     @GetMapping
-    ResponseWrapper getHolidaysByYearAndCountryAndState(@RequestParam("year") int year,
-                                                        @RequestParam("country") String country,
-                                                        @RequestParam("language") String optionalLanguage,
-                                                        @RequestParam("search") String optionalSearch,
-                                                        @RequestParam("state") String optionalState,
-                                                        @RequestParam("month") int optionalMonth,
-                                                        @RequestParam("day") int optionalDay,
-                                                        @RequestParam("public") boolean optionalIsPublic,
-                                                        @RequestParam("subDivisions") boolean optionalIsReturningSubDivisionHolidays,
-                                                        @RequestParam("previous") boolean optionalIsPrevious,
-                                                        @RequestParam("upcoming") boolean optionalIsUpcoming,
-                                                        @RequestParam("key") String key);
+    ResponseWrapperHoliday getHolidays(@RequestParam("year") Integer year,
+                                       @RequestParam("country") String country,
+                                       @RequestParam("language") String optionalLanguage,
+                                       @RequestParam("search") String optionalSearch,
+                                       @RequestParam("month") Integer optionalMonth,
+                                       @RequestParam("day") Integer optionalDay,
+                                       @RequestParam("public") Boolean optionalIsPublic,
+                                       @RequestParam("subDivisions") Boolean optionalIsReturningSubDivisionHolidays,
+                                       @RequestParam("previous") Boolean optionalIsPrevious,
+                                       @RequestParam("upcoming") Boolean optionalIsUpcoming,
+                                       @RequestParam("key") String key);
 
 }

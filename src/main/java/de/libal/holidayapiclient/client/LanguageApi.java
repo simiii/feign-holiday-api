@@ -1,6 +1,6 @@
 package de.libal.holidayapiclient.client;
 
-import de.libal.holidayapiclient.domain.ResponseWrapper;
+import de.libal.holidayapiclient.domain.ResponseWrapperLanguage;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,8 +23,8 @@ public interface LanguageApi {
      * @return retrieves a list languages
      */
     @GetMapping
-    ResponseWrapper getLanguages(@RequestParam("language") String optionalLanguage,
-                                 @RequestParam("search") String optionalSearchMin2chars,
-                                 @RequestParam("key") String key);
+    ResponseWrapperLanguage getLanguages(@RequestParam("language") String optionalLanguage,
+                                         @RequestParam("search") String optionalSearchMin2chars,
+                                         @RequestParam("key") String key);
 
 }

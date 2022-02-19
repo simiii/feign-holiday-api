@@ -1,6 +1,6 @@
 package de.libal.holidayapiclient.client;
 
-import de.libal.holidayapiclient.domain.ResponseWrapper;
+import de.libal.holidayapiclient.domain.ResponseWrapperCountry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,9 +24,9 @@ public interface CountriesApi {
      * @return retrieves a list countries with states and provinces
      */
     @GetMapping
-    ResponseWrapper getCountries(@RequestParam("country") String optionalCountry,
-                                 @RequestParam("search") String optionalSearchMin2chars,
-                                 @RequestParam("public") boolean optionalIsPublic,
-                                 @RequestParam("key") String key);
+    ResponseWrapperCountry getCountries(@RequestParam("country") String optionalCountry,
+                                        @RequestParam("search") String optionalSearchMin2chars,
+                                        @RequestParam("public") Boolean optionalIsPublic,
+                                        @RequestParam("key") String key);
 
 }
