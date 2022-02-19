@@ -18,7 +18,7 @@ public interface CountriesApi {
      * Retrieves a list countries with states and provinces
      *
      * @param optionalCountry         return only the country with the specified code
-     * @param optionalSearchMin2chars search countries by code and name - minimum 2 characters
+     * @param optionalSearchMin2chars search countries by code and name, minimum 2 characters
      * @param optionalIsPublic        return only countries that have public holidays
      * @param key                     your API key
      * @return retrieves a list countries with states and provinces

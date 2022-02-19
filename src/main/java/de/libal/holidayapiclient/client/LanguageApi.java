@@ -18,7 +18,7 @@ public interface LanguageApi {
      * Retrieves a list languages
      *
      * @param optionalLanguage        return only the language with the specified code
-     * @param optionalSearchMin2chars search languages by code and name - minimum 2 characters
+     * @param optionalSearchMin2chars search languages by code and name, minimum 2 characters
      * @param key                     your API key
      * @return retrieves a list languages
      */
